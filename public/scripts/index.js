@@ -11,6 +11,7 @@ $(function () {
 function onSubmitQuestion(e) {
   e.preventDefault();
 
+  $("#input-text").focus(); // keep focus on input
   var question = $("#input-text").val();
   if (question.length > 0) {
     // Clear input and append question to chat
