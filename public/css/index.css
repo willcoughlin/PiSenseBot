@@ -1,0 +1,30 @@
+.container h1 .text-muted {
+    /* font-style: oblique; */
+}
+
+#chat-log {
+    padding: 12px;
+    margin-bottom: 8px;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    height: 400px;
+    max-height: 400px;
+    overflow-y: scroll;
+}
+
+.sender {
+    display: inline-block;
+    width: 100px;
+}
+
+.from-bot .sender {
+    color: green;
+}
+
+.to-bot .sender {
+    color: blue;
+}
+
+.message {
+    margin-left: 12px;
+}
