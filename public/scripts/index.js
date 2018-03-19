@@ -26,6 +26,7 @@ function onSubmitQuestion(e) {
 /* Send message to web service and recieve response from Watson */
 function askWatson(msg) {
   // TODO: implement AJAX call to Node-RED service
+  $.post("https://pisensebotcloud.mybluemix.net/ask", {msgtxt: msg})
   return "Add response here";
 }
 
