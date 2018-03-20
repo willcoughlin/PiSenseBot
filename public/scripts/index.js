@@ -1,6 +1,6 @@
 $(function () {
   // Start conversation with blank message
-  appendMsgFrom(askWatson(""));
+  appendMsgFrom("Welcome, how can I help you?")
   $("#input-text").focus();
 
   // Handle input submission
@@ -17,17 +17,24 @@ function onSubmitQuestion(e) {
     // Clear input and append question to chat
     $("#input-text").val("");
     appendMsgTo(question);
-    // Ask Watson and append response to chat 
-    var answer = askWatson(question);
-    appendMsgFrom(answer);
+    // Ask Watson
+    askWatson(question);
   }
 }
 
 /* Send message to web service and recieve response from Watson */
 function askWatson(msg) {
-  // TODO: implement AJAX call to Node-RED service
-  $.post("https://pisensebotcloud.mybluemix.net/ask", {msgtxt: msg})
-  return "Add response here";
+  appendMsgFrom("Just a moment."); 
+
+  /*
+   Query Watson endpoint
+   - URL: https://pisensebotcloud.mybluemix.net/query
+   - HTTP method: POST
+   - Request data type: text/plain
+   - Response data type: text/plain
+   - Cross-origin request? Yes.
+  */
+ // TODO: Query service for answer from Watson
 }
 
 /* Append message to bot to chat log */
