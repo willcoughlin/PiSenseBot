@@ -35,6 +35,15 @@ function askWatson(msg) {
    - Cross-origin request? Yes.
   */
  // TODO: Query service for answer from Watson
+  $.ajax({url: "https://pisensebotcloud.mybluemix.net/query", 
+    data: msg, 
+    crossDomain: true, 
+    method: "POST", 
+    dataType: "text",
+    contentType: "text/plain",
+    success: function(response) {
+      appendMsgFrom(response);
+    }});
 }
 
 /* Append message to bot to chat log */
